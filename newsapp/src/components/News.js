@@ -42,7 +42,6 @@ export class News extends Component {
         this.props.setProgress(30);
         let parseData = await data.json();
         this.props.setProgress(70);
-        console.log("news data::--", parseData)
         this.setState({
             articles: parseData.articles,
             totalResults: parseData.totalResults,
@@ -107,7 +106,6 @@ export class News extends Component {
         this.setState({ loading: true })
         let data = await fetch(url)
         let parseData = await data.json();
-        console.log("news data::--", parseData)
         this.setState({
             articles: this.state.articles.concat(parseData.articles),
             totalResults: parseData.totalResults,
